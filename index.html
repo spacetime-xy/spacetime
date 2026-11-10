@@ -1,1 +1,431 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050817">
+<title>SpaceXTimeY | Everywhere. Everytime.</title>
+<meta name="description" content="SpaceXTimeY — Everything Across Space & Time. Everywhere. Everytime. One Universe. Infinite Coordinates.">
+
+<style>
+:root {
+  --bg:#050817;
+  --blue:#819cff;
+  --purple:#b18aff;
+  --white:#f5f6ff;
+  --muted:#a1abc9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+#universe{
+  position:fixed;inset:0;width:100%;height:100%;
+  z-index:-2;pointer-events:none;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background:
+  radial-gradient(ellipse at 50% 25%,#18265355,transparent 55%),
+  radial-gradient(ellipse at 85% 75%,#46226b22,transparent 45%);
+  pointer-events:none;
+}
+nav{
+  position:fixed;top:0;width:100%;z-index:20;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 7%;
+  background:#050817bb;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #ffffff12;
+}
+.logo{
+  color:white;text-decoration:none;
+  font-size:22px;font-weight:850;letter-spacing:1.5px;
+}
+.logo span{color:var(--blue)}
+nav .menu{display:flex;gap:28px}
+nav .menu a{
+  color:#c1c9df;text-decoration:none;
+  font-size:13px;transition:.3s;
+}
+nav .menu a:hover{color:white}
+.hero{
+  min-height:100vh;display:flex;
+  justify-content:center;align-items:center;
+  text-align:center;padding:130px 20px 90px;
+  position:relative;
+}
+.hero-content{max-width:900px}
+.label{
+  font-size:11px;letter-spacing:6px;
+  color:#a3b5ff;text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(48px,10vw,110px);
+  letter-spacing:-5px;margin:28px 0 12px;
+  font-weight:900;
+  background:linear-gradient(110deg,#fff 10%,#9bb4ff 55%,#c5a1ff);
+  -webkit-background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 35px #829cff44);
+}
+.tagline{
+  font-size:clamp(17px,3vw,26px);
+  font-weight:600;letter-spacing:5px;
+}
+.hero p{
+  color:var(--muted);line-height:1.9;
+  max-width:620px;margin:25px auto;
+  font-size:15px;
+}
+.actions{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.btn{
+  padding:15px 27px;border-radius:40px;
+  text-decoration:none;font-size:13px;
+  display:inline-block;transition:.3s;
+}
+.primary{
+  color:#070b1c;background:linear-gradient(110deg,#a9bcff,#c4a4ff);
+}
+.secondary{
+  border:1px solid #8299ff88;color:white;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 8px 30px #819cff35}
+.coordinate{
+  position:absolute;bottom:35px;left:50%;
+  transform:translateX(-50%);
+  font-size:10px;letter-spacing:4px;color:#6679a9;
+}
+section{padding:110px 9%;position:relative}
+.section-head{text-align:center;margin-bottom:55px}
+.section-head small{
+  color:#91a8ff;letter-spacing:5px;font-size:10px;
+}
+.section-head h2{
+  font-size:clamp(30px,5vw,49px);margin:18px 0;
+}
+.section-head p{
+  max-width:650px;margin:auto;
+  color:var(--muted);font-size:14px;line-height:1.9;
+}
+.philosophy{
+  max-width:850px;margin:auto;text-align:center;
+}
+.philosophy .big{
+  font-size:clamp(25px,4.5vw,48px);
+  line-height:1.5;font-weight:600;
+}
+.gradient{
+  background:linear-gradient(90deg,#94b1ff,#c2a1ff);
+  -webkit-background-clip:text;color:transparent;
+}
+.philosophy p{
+  color:var(--muted);line-height:2;
+  margin:30px auto;max-width:700px;
+}
+.coordinates{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:22px;max-width:850px;margin:50px auto 0;
+}
+.dimension{
+  border:1px solid #819cff33;
+  background:linear-gradient(140deg,#152044aa,#0a1025aa);
+  padding:35px;border-radius:18px;text-align:center;
+}
+.dimension .letter{
+  font-size:65px;font-weight:900;
+  color:#9cb3ff;
+}
+.dimension h3{margin:10px 0}
+.dimension p{color:var(--muted);font-size:13px;line-height:1.8}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  padding:30px;border:1px solid #ffffff18;
+  border-radius:18px;background:#10172c99;
+  transition:.35s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#8ba7ff99;
+  background:#172143cc;
+}
+.card .icon{font-size:32px;color:#a7baff;margin-bottom:24px}
+.card h3{font-size:19px;margin-bottom:12px}
+.card p{font-size:13px;line-height:1.8;color:var(--muted)}
+.vision{
+  text-align:center;
+  background:radial-gradient(ellipse at center,#202e5b88,transparent 70%);
+}
+.vision h2{
+  font-size:clamp(35px,7vw,75px);
+  line-height:1.25;margin:25px 0;
+}
+.vision p{
+  max-width:680px;margin:auto;
+  line-height:2;color:#b5c0dc;font-size:15px;
+}
+.manifesto{
+  border-top:1px solid #ffffff18;
+  border-bottom:1px solid #ffffff18;
+  padding:55px 15px;text-align:center;
+}
+.manifesto h2{
+  font-size:clamp(23px,4vw,40px);
+  letter-spacing:2px;
+}
+.contact{text-align:center}
+.contact p{
+  color:var(--muted);margin:20px auto;
+  line-height:1.8;max-width:550px;
+}
+footer{
+  padding:35px 8%;border-top:1px solid #ffffff18;
+  display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:18px;
+  color:#8491b0;font-size:12px;
+}
+footer strong{color:white}
+@media(max-width:650px){
+  nav{padding:17px 5%}
+  .logo{font-size:17px}
+  nav .menu{gap:12px}
+  nav .menu a{font-size:10px}
+  section{padding:80px 7%}
+  .coordinates{grid-template-columns:1fr}
+  .hero h1{letter-spacing:-3px}
+  .tagline{letter-spacing:3px}
+}
+@media(max-width:380px){
+  nav .menu{gap:7px}
+  nav .menu a{font-size:9px}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="universe"></canvas>
+
+<nav>
+  <a class="logo" href="#home">SPACE<span>X</span>TIME<span>Y</span></a>
+  <div class="menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#dimensions">Dimensions</a>
+    <a href="#explore">Explore</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="label">An idea without boundaries</div>
+    <h1>SpaceXTimeY</h1>
+    <div class="tagline gradient">EVERYWHERE. EVERYTIME.</div>
+    <p>
+      Everything Across Space & Time.
+      One universe, countless dimensions,
+      endless possibilities.
+      Discover a vision where everything is connected.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#about">Discover Our Universe ↗</a>
+      <a class="btn secondary" href="#explore">Explore Possibilities</a>
+    </div>
+  </div>
+  <div class="coordinate">X · Y · SPACE · TIME</div>
+</header>
+
+<!-- PHILOSOPHY -->
+<section id="about">
+  <div class="section-head">
+    <small>THE IDEA BEHIND US</small>
+    <h2>Everything Across Space & Time.</h2>
+  </div>
+
+  <div class="philosophy">
+    <div class="big">
+      The universe is our <span class="gradient">space.</span><br>
+      Time is our <span class="gradient">dimension.</span><br>
+      Possibilities are <span class="gradient">limitless.</span>
+    </div>
+    <p>
+      SpaceXTimeY is inspired by the fundamental relationship
+      between space and time. Everything that exists, moves,
+      changes or happens has a place in the universe and
+      a moment in time.
+      We see this as an invitation to explore everything
+      that is possible.
+    </p>
+  </div>
+</section>
+
+<!-- DIMENSIONS -->
+<section id="dimensions">
+  <div class="section-head">
+    <small>THE CONCEPT</small>
+    <h2>Coordinates of Possibility.</h2>
+    <p>
+      A name inspired by dimensions, coordinates and
+      the infinite scale of the universe.
+    </p>
+  </div>
+
+  <div class="coordinates">
+    <div class="dimension">
+      <div class="letter">X</div>
+      <h3>Space</h3>
+      <p>Position, direction, distance and the vastness
+      of everything that exists.</p>
+    </div>
+    <div class="dimension">
+      <div class="letter">Y</div>
+      <h3>Time</h3>
+      <p>Moments, movement, evolution and the endless
+      journey of existence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORATION -->
+<section id="explore">
+  <div class="section-head">
+    <small>INFINITE HORIZONS</small>
+    <h2>One Universe. Many Possibilities.</h2>
+    <p>
+      Our philosophy is not limited to a single industry.
+      It embraces exploration, knowledge and innovation
+      across many fields.
+    </p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="icon">✧</div>
+      <h3>Technology</h3>
+      <p>Creating new possibilities through software,
+      digital systems and emerging technologies.</p>
+    </article>
+    <article class="card">
+      <div class="icon">⌘</div>
+      <h3>Artificial Intelligence</h3>
+      <p>Exploring intelligence, automation and
+      the next generation of intelligent systems.</p>
+    </article>
+    <article class="card">
+      <div class="icon">◈</div>
+      <h3>Science & Research</h3>
+      <p>Questioning the unknown and expanding
+      the boundaries of human understanding.</p>
+    </article>
+    <article class="card">
+      <div class="icon">⟡</div>
+      <h3>Engineering</h3>
+      <p>Turning imagination, ideas and knowledge
+      into meaningful real-world solutions.</p>
+    </article>
+    <article class="card">
+      <div class="icon">◎</div>
+      <h3>Space & Exploration</h3>
+      <p>Discovering the universe and exploring
+      possibilities beyond familiar horizons.</p>
+    </article>
+    <article class="card">
+      <div class="icon">∞</div>
+      <h3>Future Innovations</h3>
+      <p>Opening new paths towards possibilities
+      that the world has yet to imagine.</p>
+    </article>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision">
+  <div class="section-head">
+    <small>OUR VISION</small>
+    <h2>There Are No<br><span class="gradient">Finite Possibilities.</span></h2>
+  </div>
+  <p>
+    We believe the greatest discoveries begin with curiosity.
+    Every idea has a coordinate. Every possibility has a
+    horizon. Our vision is to build, explore and innovate
+    across the dimensions of human potential.
+  </p>
+</section>
+
+<div class="manifesto">
+  <h2 class="gradient">EVERYWHERE. EVERYTIME.</h2>
+  <p style="color:#9daaca;margin-top:15px;font-size:13px">
+    ONE UNIVERSE. INFINITE COORDINATES.
+  </p>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-head">
+    <small>THE JOURNEY BEGINS</small>
+    <h2>Let's Explore What's Possible.</h2>
+  </div>
+  <p>
+    Every great idea begins with a question.
+    Every great journey begins with a first step.
+  </p>
+  <a class="btn primary" href="mailto:YOUR-EMAIL-HERE">
+    Connect With SpaceXTimeY ↗
+  </a>
+</section>
+
+<footer>
+  <strong>SpaceXTimeY</strong>
+  <span>Everywhere. Everytime.</span>
+  <span>© 2026 SpaceXTimeY</span>
+</footer>
+
+<script>
+const canvas=document.getElementById("universe");
+const ctx=canvas.getContext("2d");
+let stars=[];
+let width,height;
+
+function resize(){
+  width=canvas.width=window.innerWidth;
+  height=canvas.height=window.innerHeight;
+  stars=Array.from({length:220},()=>({
+    x:Math.random()*width,
+    y:Math.random()*height,
+    r:Math.random()*1.4+.2,
+    v:Math.random()*.35+.05,
+    a:Math.random()
+  }));
+}
+
+function draw(){
+  ctx.clearRect(0,0,width,height);
+  stars.forEach(s=>{
+    s.a+=.012;
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(180,200,255,${.35+.4*Math.abs(Math.sin(s.a))})`;
+    ctx.fill();
+    s.y+=s.v;
+    if(s.y>height){s.y=0;s.x=Math.random()*width}
+  });
+  requestAnimationFrame(draw);
+}
+
+window.addEventListener("resize",resize);
+resize();
+draw();
+</script>
+</body>
+</html>
